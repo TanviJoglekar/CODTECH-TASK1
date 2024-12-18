@@ -1,0 +1,56 @@
+class StudentGrades:
+    def __init__(self):
+        # Collecting subject marks from the user
+        self.math = int(input("Enter marks for Mathematics: "))
+        self.design_engineering = int(input("Enter marks for Design Engineering: "))
+        self.c_programming = int(input("Enter marks for C Programming: "))
+        self.english = int(input("Enter marks for English: "))
+        self.c_practical = int(input("Enter practical marks for C Programming: "))
+
+    def calculate_average(self):
+        # Calculating the average marks
+        total_marks = self.math + self.design_engineering + self.c_programming + self.english + self.c_practical
+        self.average = total_marks / 5
+        return self.average
+
+    def determine_letter_grade(self):
+        # Determining the letter grade based on the average
+        if self.average >= 90:
+            self.letter_grade = "A"
+        elif self.average >= 80:
+            self.letter_grade = "B"
+        elif self.average >= 70:
+            self.letter_grade = "C"
+        elif self.average >= 60:
+            self.letter_grade = "D"
+        else:
+            self.letter_grade = "F"
+        return self.letter_grade
+
+    def calculate_gpa(self):
+        # Converting the letter grade to a GPA value
+        grade_to_gpa = {"A": 4.0, "B": 3.0, "C": 2.0, "D": 1.0, "F": 0.0}
+        self.gpa = grade_to_gpa[self.letter_grade]
+        return self.gpa
+
+    def display_result(self):
+        # Displaying the results
+        print("\n--- Student Grade Report ---")
+        print(f"Mathematics: {self.math}")
+        print(f"Design Engineering: {self.design_engineering}")
+        print(f"C Programming: {self.c_programming}")
+        print(f"English: {self.english}")
+        print(f"C Programming Practical: {self.c_practical}")
+        print(f"Average Marks: {self.average:.2f}")
+        print(f"Letter Grade: {self.letter_grade}")
+        print(f"GPA: {self.gpa:.2f}")
+        print(f"Result: {'Pass' if self.letter_grade != 'F' else 'Fail'}")
+
+
+# Main Program Execution
+if __name__ == "__main__":
+    student = StudentGrades()  # Create a StudentGrades object
+    student.calculate_average()  # Calculate the average marks
+    student.determine_letter_grade()  # Determine the letter grade
+    student.calculate_gpa()  # Calculate the GPA
+    student.display_result()  # Display the result
