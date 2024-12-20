@@ -42,5 +42,9 @@ Corresponding letter grade.
 Computed GPA.
 Final result as "Pass" or "Fail."
 
+<img width="728" alt="Screenshot 2024-12-20 121544" src="https://github.com/user-attachments/assets/b2b1f0c6-bb5a-41ca-ab2d-e75cc19518a1" />
+
+
+
 
 
